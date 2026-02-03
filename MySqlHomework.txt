@@ -1,0 +1,102 @@
+Question:Write each and evry Query of SQL on notepad (EmployeeDetails).
+Total 14 Colums/Feilds;
+1 primary key & Auto Increment;
+4 Unique key;
+3 NOT Null;
+
+Show Databases;
+
+use batch1299;
+
+show Tables;
+
+create table EmployeeDetails(empId int primary key, name varchar(60), mobNo bigint unique key NOT NULL, age int, dept varchar(30), experience varchar(40), joiningDate Date Not Null, aadharNo bigint unique key NOT NULL, dob Date Not Null, gender varchar(10), city varchar(40), State varchar(50), emailId varchar(70) unique key, salary varchar(30), pancardNo bigint unique key);
+
+desc EmployeeDetails;
+
+Field        Type         Null  Key  Default  Extra
+empId        int          No    pri  Null     Auto_Increment
+name         varchar(60)  Yse        Null     
+mobNo        bigint       No    uni  Null   
+age          int          Yes        Null
+dept         varchar(30)  Yes        Null
+experience   varchar(40)  Yes        Null
+joiningDate  Date         No         Null
+aadharNo     bigint       No    uni  Null
+dob          Date         No         Null
+gender       varchar(10)  Yes        Null
+city         varchar(40)  Yes        Null
+State        varchar(50)  Yes        Null
+emailId      varchar(70)  No    uni  Null
+salary       varchar(30)  Yes        Null
+pancardNo    bigint       Yes   uni  Null
+
+
+insert into EmployeeDetails(name, mobNo, age, dept,experience, joiningDate, aadharNo, dob, gender, city, State, emailId, salary, pancardNo)values('Shruti', 4567345678, 21,'Inter', '2Yrs', 2023-08-05, 345623456454, 2005-08-21, 'Female', 'Miraj', 'Maharastra', 'shruti123@gmail.com', ' 2LPA', 345673456786543),('Onkar', 5667345678, 25, 'Jr.Developer', '5 Yrs', 2020-01-21, 665623456454, 2001-08-21, 'Male', 'Miraj', 'Maharastra', 'onkar123@gmail.com','10LPA' ,775673456786543),('Harsh', 5567345678, 21, 'Sr.Developer', '20 Yrs', 2005-08-05, 225623456454, 1983-08-21, 'Male', 'Miraj','Maharastra', 'harsh123@gmail.com', '20LPA', 885673456786543);
+
+select * from EmployeeDatails;
+
+empId  name  mobNo       age  dept         experience  joiningDate   aadharNo      dob         gender  city     state     emailId               salary   pancardNo
+1    Shruti  4567345678  21   Inter         2Yrs       2023-08-05    345623456454  2005-08-21  Female  Miraj  Maharashtra
+shruti123@gmail.com   2LPA     345673456786543
+
+2    Onkar   5667345678  25   Jr.Developer  5Yrs       2020-03-21    665623456454  2001-08-21  Male    Miraj  Maharashtra
+onakr123@gmail.com   10LPA     775673456786543
+
+3    Harsh   4567345678  21   Sr.Developer  2oYrs      2005-08-05    225623456454  1983-08-21  Male  Miraj    Maharashtra
+shruti123@gmail.com   2LPA     345673456786543
+
+ALTER table EmployeeDetails ADD Country varchar(60);
+empId  name  mobNo       age  dept         experience  joiningDate   aadharNo      dob         gender  city     state     emailId               salary   pancardNo    Country
+
+ALTER table employeeDetails DROP Country varchar(60);
+empId  name  mobNo       age  dept         experience  joiningDate   aadharNo      dob         gender  city     state     emailId               salary   pancardNo
+
+ALTER table EmployeeDetails RENAME Colume experience to exp;
+empId  name  mobNo       age  dept         exp  joiningDate   aadharNo      dob         gender  city     state     emailId               salary   pancardNo
+
+ALTER table EmployeeDetails RENAME  to empDetails;
+
+Select * from empDetails ORDER BY salary ASC;
+1    Shruti  4567345678  21   Inter         2Yrs       2023-08-05    345623456454  2005-08-21  Female  Miraj  Maharashtra
+shruti123@gmail.com   2LPA     345673456786543
+
+2    Onkar   5667345678  25   Jr.Developer  5Yrs       2020-03-21    665623456454  2001-08-21  Male    Miraj  Maharashtra
+onakr123@gmail.com   10LPA     775673456786543
+
+3    Harsh   4567345678  42   Sr.Developer  20Yrs      2005-08-05    225623456454  1983-08-21  Male  Miraj    Maharashtra
+harsh123@gmail.com   2LPA     345673456786543
+
+
+select max salary from empDetails;
+3    Harsh   4567345678  21   Sr.Developer  2oYrs      2005-08-05    225623456454  1983-08-21  Male  Miraj    Maharashtra
+harsh123@gmail.com   2LPA     345673456786543
+
+
+select * from empDetails WHERE name LIKE 's';
+1    Shruti  4567345678  21   Inter         2Yrs       2023-08-05    345623456454  2005-08-21  Female  Miraj  Maharashtra
+shruti123@gmail.com   2LPA     345673456786543
+
+
+select * from empDetails WHERE age BETWEEN 15 AND 25;
+1    Shruti  4567345678  21   Inter         2Yrs       2023-08-05    345623456454  2005-08-21  Female  Miraj  Maharashtra
+shruti123@gmail.com   2LPA     345673456786543
+
+2    Onkar   5667345678  25   Jr.Developer  5Yrs       2020-03-21    665623456454  2001-08-21  Male    Miraj  Maharashtra
+onakr123@gmail.com   10LPA     775673456786543
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
